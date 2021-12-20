@@ -1,6 +1,7 @@
-package com.example.databinding.ui
+package com.example.databinding.ui.auth.viewmodel
 
 import android.app.Activity
+import android.content.Intent
 import android.text.TextUtils
 import android.widget.Toast
 import androidx.lifecycle.LiveData
@@ -9,11 +10,13 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.databinding.data.ApiRepositoryProvider
 import com.example.databinding.model.login.AgentLoginResponse
+import com.example.databinding.ui.main.activity.MainActivity
 import com.example.databinding.utlis.Constants
 import com.example.databinding.utlis.PasswordError
 import com.example.databinding.utlis.Resource
 import com.example.databinding.utlis.USERNAME_ERROR
 import kotlinx.coroutines.launch
+
 
 class LoginViewModel(var context: Activity) : ViewModel() {
 
@@ -102,9 +105,26 @@ class LoginViewModel(var context: Activity) : ViewModel() {
                                 responseEmailAddress?.value = response.data.email
 
                                 repository.saveToken(response.data.api_token)
+                                Toast.makeText(
+                                    context,
+                                    "" + responseMsg?.value.toString(),
+                                    Toast.LENGTH_SHORT
+                                ).show()
+
+                                context.startActivity(Intent(context, MainActivity::class.java))
+
+
                             }
                             else -> {
                                 liveDataLogin.postValue(Resource.error(response.response, response))
+
+
+                                /*   val rootView: View =  context.window.decorView.rootView
+                                   CommonUtils.warningToast(
+                                       rootView,
+                                       context,
+                                       responseMsg?.value.toString()
+                                   )*/
                                 responseMsg?.value = response.response
                                 Toast.makeText(
                                     context,

@@ -2,6 +2,7 @@ package com.example.databinding.data
 
 import com.example.databinding.model.login.AgentLoginResponse
 import com.example.databinding.model.profile.AgentProfileResponse
+import com.example.databinding.model.view_bank_details.AgentViewBankDetailsResponse
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Response
@@ -26,6 +27,11 @@ interface ApiService {
     /* Profile Api */
     @POST("agent/profile")
     suspend fun profile(): Response<AgentProfileResponse>
+
+    /* View Bank Details Api */
+    @FormUrlEncoded
+    @POST("agent/bankdetails")
+    suspend fun viewBankDetails(@Field("page") page: String): Response<AgentViewBankDetailsResponse>
 
 
     /* retrofit builder */

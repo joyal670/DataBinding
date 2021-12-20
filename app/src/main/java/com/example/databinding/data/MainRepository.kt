@@ -1,8 +1,8 @@
 package com.example.databinding.data
 
 import com.example.databinding.model.login.AgentLoginResponse
-import com.example.databinding.model.profile.AgentProfileResponse
 import com.example.databinding.utlis.AppPreferences.prefUserToken
+import com.example.databinding.model.view_bank_details.AgentViewBankDetailsResponse
 import retrofit2.Response
 
 class MainRepository(private val apiHelper: ApiService) {
@@ -15,4 +15,7 @@ class MainRepository(private val apiHelper: ApiService) {
         prefUserToken = userToken
     }
 
+    /* View Bank Details Api */
+    suspend fun viewBankDetails(page: String): Response<AgentViewBankDetailsResponse> =
+        apiHelper.viewBankDetails(page)
 }
