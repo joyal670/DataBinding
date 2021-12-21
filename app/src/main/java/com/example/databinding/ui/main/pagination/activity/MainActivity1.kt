@@ -56,7 +56,7 @@ class MainActivity1 : AppCompatActivity() {
 
         viewModel = ViewModelProvider(
             this,
-            ViewModelFactory(BankRepository(BankDataSource(ApiService.create())))
+            ViewModelFactory(BankRepository(ApiService.create()))
         )
             .get(BankNewViewModel::class.java)
 

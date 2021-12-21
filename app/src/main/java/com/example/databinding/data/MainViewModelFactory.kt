@@ -3,6 +3,7 @@ package com.example.databinding.data
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 
+/*
 class MainViewModelFactory(private val apiService: ApiService) : ViewModelProvider.Factory {
 
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
@@ -11,4 +12,4 @@ class MainViewModelFactory(private val apiService: ApiService) : ViewModelProvid
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }
-}
+}*/
