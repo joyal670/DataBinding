@@ -10,7 +10,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.databinding.data.ApiRepositoryProvider
 import com.example.databinding.model.login.AgentLoginResponse
-import com.example.databinding.ui.main.activity.MainActivity
+import com.example.databinding.ui.main.pagination.activity.MainActivity1
 import com.example.databinding.utlis.Constants
 import com.example.databinding.utlis.PasswordError
 import com.example.databinding.utlis.Resource
@@ -111,7 +111,7 @@ class LoginViewModel(var context: Activity) : ViewModel() {
                                     Toast.LENGTH_SHORT
                                 ).show()
 
-                                context.startActivity(Intent(context, MainActivity::class.java))
+                                context.startActivity(Intent(context, MainActivity1::class.java))
 
 
                             }

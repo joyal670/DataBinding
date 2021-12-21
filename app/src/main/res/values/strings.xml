@@ -229,4 +229,6 @@
     <string name="security_deposit">Security Deposit</string>
     <string name="token">Token</string>
     <string name="login">Login</string>
+    <string name="try_again_text_btn">try again</string>
+    <string name="error_text_label">error occured</string>
 </resources>

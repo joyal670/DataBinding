@@ -12,6 +12,10 @@
             name="itemClick"
             type="com.example.databinding.ui.main.adapter.BankAdapter.ProductItemClickListener" />
 
+        <variable
+            name="viewmodel"
+            type="com.example.databinding.ui.main.pagination.viewmodel.BankNewViewModel" />
+
         <import type="androidx.databinding.DataBindingUtil" />
 
     </data>

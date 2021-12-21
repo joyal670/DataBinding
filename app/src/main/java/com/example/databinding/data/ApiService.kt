@@ -33,6 +33,11 @@ interface ApiService {
     @POST("agent/bankdetails")
     suspend fun viewBankDetails(@Field("page") page: String): Response<AgentViewBankDetailsResponse>
 
+    /* View Bank Details Api */
+    @FormUrlEncoded
+    @POST("agent/bankdetails")
+    suspend fun viewBankDetails1(@Field("page") page: Int): Response<AgentViewBankDetailsResponse>
+
 
     /* retrofit builder */
     companion object {
